@@ -35,14 +35,15 @@ private Button send;
                 Book newbook;
                 if(!"".equals(name)){
                     if(bookList.size() % 2 == 0){
-                        newbook = new Book(name,0);
+                        newbook = new Book(name,1);
                     }
                     else {
-                        newbook  = new Book(name,1);
+                        newbook  = new Book(name,0);
                     }
-                    bookList.add(newbook);
+                    bookList.add(0,newbook);
                     adapter.notifyItemInserted(bookList.size()-1);
-                    recyclerView.scrollToPosition(bookList.size()-1);
+                    adapter.notifyItemInserted(0);
+                    recyclerView.scrollToPosition(0);
                     inputText.setText("");
                 }
             }
