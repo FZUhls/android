@@ -41,7 +41,6 @@ private Button send;
                         newbook  = new Book(name,0);
                     }
                     bookList.add(0,newbook);
-                    adapter.notifyItemInserted(bookList.size()-1);
                     adapter.notifyItemInserted(0);
                     recyclerView.scrollToPosition(0);
                     inputText.setText("");
